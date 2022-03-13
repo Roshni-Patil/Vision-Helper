@@ -10,14 +10,14 @@
 </head>
 <body>
 
-
-
-<form method="post" id="myForm" action="/text-reader">
     <video id="webcam" autoplay playsinline width="640" height="480"></video>
-    <canvas id="canvas" class="d-none" name="x" ></canvas>
+    <canvas id="canvas" class="d-none"  ></canvas>
     <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
     <div id="my_camera"></div>
-    <input type=button value="Take Snapshot" onClick="take_snapshot()" id="take-photo">
+<form method="post" id="myForm" action="/text-reader">
+    <!-- <input type="image" id="img" name="x" src="img_submit.gif" alt="Submit" > -->
+    
+    <input type=button value="Take Snapshot" name="x" onClick="take_snapshot()" id="take-photo">
 </form>
 
 <script> 
@@ -37,10 +37,11 @@
     function take_snapshot() {
     // take snapshot and get image data
     webcam.snap()
-    const myForm = document.getElementById("myForm");
-    myForm.submit();
+    // document.getElementById("img").innerHTML=canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    // const myForm = document.getElementById("myForm");
+    // myForm.submit();
     // console.log(x)
-    // document.location.href = canvas.toDataURL("image/png" ).replace("image/png", "image/octet-stream");
+    document.location.href = canvas.toDataURL("image/png" ).replace("image/png", "image/octet-stream");
     // var x = canvas.toDataURL("image/png");
     // document.getElementById('canvas').src=imgurl;
     // console.log("hi")

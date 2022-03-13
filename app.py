@@ -32,9 +32,9 @@ def result():
 
         elif "document reader" in query:
                 py.speak("Ok Starting text reader ")
-                py.speak("text reader  function is called")
-                # os.system(python text-reader.py)
-
+                # py.speak("text reader  function is called")
+                # os.system("python text-reader.py")
+                return render_template('text-reader.html')
    
         else:
                 py.speak("We are not able to recognize the command")
@@ -44,5 +44,10 @@ def result():
         return render_template('output.html' , query=query)
         return None
 
+@app.route('/text-reader', methods=['POST'])
+def textreader():
+      query=request.form["x"]
+      print(query)  
+      
 app.run(host="localhost" , port=8080, debug=True)
 
