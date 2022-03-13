@@ -1,4 +1,57 @@
+<!-- Python code to capture image  -->
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="{{ url_for('video') }}" width="50%"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- javascript code to capture image / -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,10 +67,10 @@
     <canvas id="canvas" class="d-none"  ></canvas>
     <audio id="snapSound" src="audio/snap.wav" preload = "auto"></audio>
     <div id="my_camera"></div>
-<form method="post" id="myForm" action="/text-reader">
+<form method="post" id="myForm" action="/text-reader"> -->
     <!-- <input type="image" id="img" name="x" src="img_submit.gif" alt="Submit" > -->
     
-    <input type=button value="Take Snapshot" name="x" onClick="take_snapshot()" id="take-photo">
+    <!-- <input type=button value="Take Snapshot" name="x" onClick="take_snapshot()" id="take-photo">
 </form>
 
 <script> 
@@ -36,12 +89,12 @@
 
     function take_snapshot() {
     // take snapshot and get image data
-    webcam.snap()
-    // document.getElementById("img").innerHTML=canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    webcam.snap() -->
+    <!-- // document.getElementById("img").innerHTML=canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     // const myForm = document.getElementById("myForm");
     // myForm.submit();
     // console.log(x)
-    document.location.href = canvas.toDataURL("image/png" ).replace("image/png", "image/octet-stream");
+    // document.location.href = canvas.toDataURL("image/png" ).replace("image/png", "image/octet-stream");
     // var x = canvas.toDataURL("image/png");
     // document.getElementById('canvas').src=imgurl;
     // console.log("hi")
@@ -50,12 +103,12 @@
     
     // Canvas2Image.saveAsPNG(canvasElement ,);
     // Canvas2Image.saveAsPNG(x)
- }
+//  }
 
 
-</script>
-</body>
-</html>
+// </script>
+// </body>
+// </html> -->
 
 
 

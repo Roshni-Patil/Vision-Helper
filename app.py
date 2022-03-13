@@ -1,12 +1,13 @@
-# from keras.models import load_model
-# from crypt import methods
-from operator import index
-import os 
-import json
-import re
+# import cv2
+# import time
+# import os 
+# import json
+# import re
 import pyttsx3 as py
-from flask import Flask , render_template , request
+from flask import Flask , render_template , request , Response
 import speech_recognition as sr
+import modules
+# camera=cv2.VideoCapture(0)
 app = Flask("visionhelper")
 
 @app.route("/")
@@ -30,10 +31,8 @@ def result():
                 # os.system(python object.py)
                 
 
-        elif "document reader" in query:
+        elif "text reader" in query:
                 py.speak("Ok Starting text reader ")
-                # py.speak("text reader  function is called")
-                # os.system("python text-reader.py")
                 return render_template('text-reader.html')
    
         else:
@@ -44,10 +43,15 @@ def result():
         return render_template('output.html' , query=query)
         return None
 
-@app.route('/text-reader', methods=['POST'])
-def textreader():
-      query=request.form["x"]
-      print(query)  
-      
+@app.route('/video')
+def video():
+    return Response(modules.generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+
+
+
+
+
 app.run(host="localhost" , port=8080, debug=True)
 
