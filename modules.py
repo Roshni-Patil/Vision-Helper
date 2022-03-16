@@ -5,6 +5,7 @@ import os
 
 
 
+# Text reader module 
 
 
 
@@ -68,3 +69,45 @@ def generate_frames():
         # cv2.imwrite(img_name, frame1)
         # print("{} written!".format(img_name))
         # img_counter += 1
+
+
+
+
+
+# object detection module 
+def object_detection_frames():
+    # img_counter=0
+    camera=cv2.VideoCapture(0)
+    while True:
+            
+        ## read the camera frame
+        # time.sleep(3)
+        py.speak("hold your device stable to capture the image")
+        time.sleep(0.4)
+        py.speak("Image is going to captured")
+        py.speak("3")
+        py.speak("2")
+        py.speak("1")
+        success,frame=camera.read()
+        
+        if not success:
+            print(success)
+            break
+        else:
+            # time.sleep(3)
+            # py.speak("3")
+            # py.speak("2")
+            # py.speak("1")
+            ret,buffer=cv2.imencode('.jpg',frame)
+            frame1=frame
+            frame=buffer.tobytes()
+            # file_name_path = 'E:/Final Year Project/text-reader-images/input.jpg'
+            cv2.imwrite(f"input.jpg", frame1)
+            # break
+            print(ret)
+            py.speak("Image is captured")
+            py.speak("Wait some moments to complete the process of detecting objects")
+            os.system("python object_detection.py")
+            break
+            
+

@@ -27,9 +27,9 @@ def result():
 
         elif "object detection " in query :
                 py.speak("Ok Starting object detection")
-                py.speak("object detection function is called")
+                # py.speak("object detection function is called")
                 # os.system(python object.py)
-                
+                return render_template('object-detection.html')
 
         elif "text reader" in query:
                 py.speak("Ok Starting text reader ")
@@ -49,6 +49,9 @@ def video():
 
 
 
+@app.route('/object_detection_video')
+def object_detection_video():
+    return Response(modules.object_detection_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 
