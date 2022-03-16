@@ -2,7 +2,7 @@ import cv2
 import easyocr
 import pyttsx3
 # %matplotlib inline
-im_5_path = 'E:/Final Year Project/text-reader-images/input.jpg'
+im_5_path = 'input.jpg'
 # text detected 
 def recognize_text(img_path):
     '''loads an image and recognizes text.'''

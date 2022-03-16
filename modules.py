@@ -36,8 +36,10 @@ def generate_frames():
             ret,buffer=cv2.imencode('.jpg',frame)
             frame1=frame
             frame=buffer.tobytes()
-            file_name_path = 'E:/Final Year Project/text-reader-images/input.jpg'
-            cv2.imwrite(file_name_path, frame1)
+            os.system("rm input.jpg")
+            # os.system("mkdir text-reader-images ")
+            # file_name_path = 'text-reader-images/input.jpg'
+            cv2.imwrite("input.jpg", frame1)
             # break
             print(ret)
             py.speak("Image is captured")
