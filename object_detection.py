@@ -14,7 +14,7 @@ with open('new_user_credentials.csv' , 'r') as input:
         secret_access_key = line[3]
 
 photo = "input.jpg"
-client  = boto3.client('rekognition' , aws_access_key_id = access_key_id,aws_secret_access_key  =secret_access_key)
+client  = boto3.client('rekognition' , aws_access_key_id = access_key_id,aws_secret_access_key  =secret_access_key,region_name='us-east-1')
 
 
 with open (photo , 'rb') as input_image:
@@ -24,17 +24,35 @@ with open (photo , 'rb') as input_image:
 response = client.detect_labels(Image = {'Bytes' : input_bytes} , 
 MaxLabels = 7 , MinConfidence = 90)
 X = []
-try:
-
-    for i in range(5):
+print(response)
+print(len(response))
+objects=len(response)
+# while(next(iter(response))):
+#     X.append(response['Labels'][i]['Name'])
+#     i+=1
+if objects==0:
+    py.speak("Image not clear")
+else:
+    
+    for i in range(objects):
         X.append(response['Labels'][i]['Name'])
+    output= list(dict.fromkeys(X))  
+    x = str(output)
+    print(type(x))
+    print(x)
+    py.speak("Your nearby  objects are " + x)
+
+# try:
+    
+#     for i in range(objects):
+#         X.append(response['Labels'][i]['Name'])
 
     # speak(X)
 
-except IndexError:
+# except IndexError:
     
-    # speak(response['Labels'][0]['Name'])
-    print("error found")
+#     # speak(response['Labels'][0]['Name'])
+#     print("error found")
 
 
 # finally:
@@ -48,7 +66,3 @@ except IndexError:
 # print(response)   
 # print(output) 
 # def speak(X):
-output= list(dict.fromkeys(X))  
-x = str(output)
-print(type(x))
-py.speak("Your nearby  objects are " + x)
