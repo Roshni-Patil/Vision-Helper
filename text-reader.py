@@ -1,4 +1,4 @@
-import cv2
+# import cv2
 import easyocr
 import pyttsx3
 # %matplotlib inline
@@ -22,4 +22,5 @@ print(sentence)
 engine = pyttsx3.init()
 engine.setProperty('rate', 150)
 engine.say(sentence)
+engine.say("Click on the screen to go to Home page")
 engine.runAndWait()

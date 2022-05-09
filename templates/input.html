@@ -4,22 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
   <style>
     html,body{
       height: 100%;
       margin: 0;
+      
+    }
+    h1{
+      
+      text-align: center;
+      color: aliceblue;
     }
     #wrapper{
       min-height:100%;
+      background-color: black;
+    }
+    #heading{
+      padding-top: 20%;
     }
   </style>
 </head>
 <body>
-  <div id="wrapper" onclick="record()">
+  <div id="wrapper" onclick="record()" >
   <form method="post" id="myForm" action="/result">
-    <input type="text" name="x" id="speechToText" placeholder="Speak Something" >
-
+    <input type="text" name="x" id="speechToText" placeholder="Speak Something" hidden >
+    <div id="heading">
+      <h1 >THE VISION HELPER</h1>
+    </div>
+    
   </form>
 </div>
 <!--   

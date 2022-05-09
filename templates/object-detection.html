@@ -6,9 +6,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Object Detection</title>
+    <style>
+        html,body{
+          height: 100%;
+          margin: 0;
+          
+        }
+        h1{
+          
+          text-align: center;
+          color: aliceblue;
+        }
+        #wrapper{
+          min-height:100%;
+          background-color: black;
+        }
+        #heading{
+          padding-top: 20%;
+        }
+      </style>
 </head>
 <body>
-    <img src="{{ url_for('object_detection_video') }}" width="50%"/>
+    <img hidden src="{{ url_for('object_detection_video') }}" width="50%"/>
+    <!-- {{ url_for('object_detection_video') }} -->
+    <div id="wrapper" onclick="window.location.href='home'" >
+        
+        
+          <div id="heading">
+            <h1 >OBJECT DETECTION</h1>
+          </div>
+    </div>
+        
+    
 </body>
 </html>
