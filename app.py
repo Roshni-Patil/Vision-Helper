@@ -10,7 +10,7 @@ import modules
 # camera=cv2.VideoCapture(0)
 app = Flask("visionhelper")
 
-@app.route("/home", methods=['GET','POST'])
+@app.route("/", methods=['GET','POST'])
 def home():
         py.speak("Please Click on the Screen and tell me how may i help you ")
         return render_template( "input.html" )
